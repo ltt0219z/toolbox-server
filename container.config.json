@@ -1,0 +1,19 @@
+{
+  "name": "toolbox-server",
+  "description": "小工具集后端 - 记账/待办/游戏",
+  "containerPort": 3000,
+  "envParams": {
+    "NODE_ENV": "production"
+  },
+  "cpu": 0.5,
+  "mem": 1,
+  "minNum": 0,
+  "maxNum": 3,
+  "policyType": "cpu",
+  "policyThreshold": 60,
+  "vpc": {
+    "vpcId": "",
+    "subnetId": ""
+  },
+  "customLogs": "stdout"
+}
