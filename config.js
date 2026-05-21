@@ -1,7 +1,7 @@
 module.exports = {
   // 微信小程序配置（后续填入真实值）
-  WECHAT_APPID: 'your_appid_here',
-  WECHAT_SECRET: 'your_secret_here',
+  WECHAT_APPID: 'wx276e67fd1902494a',
+  WECHAT_SECRET: 'ac219833a9017c5f10258c68b025e911',
   WECHAT_TEMPLATE_ID: 'your_template_id_here',
 
   // JWT 密钥（生产环境请更换）
