@@ -51,7 +51,7 @@ async function sendSubscribeMessage(openid, data) {
   const res = await axios.post(url, {
     touser: openid,
     template_id: config.WECHAT_TEMPLATE_ID,
-    page: '/pages/todo/detail/detail?id=' + data.todo_id,
+    page: 'pages/todo/detail/detail?id=' + data.todo_id,
     data: {
       thing1: { value: data.title },
       time2: { value: data.due_time },

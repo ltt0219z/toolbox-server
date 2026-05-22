@@ -34,6 +34,15 @@ function startScheduler() {
         const remindAt = dueTime - item.remind_offset;
 
         if (nowUnix >= remindAt) {
+          console.log('[Scheduler] 准备发送提醒:', JSON.stringify({
+            todo_id: item.todo_id,
+            title: item.title,
+            due_time: item.due_time,
+            remind_offset: item.remind_offset,
+            openid: item.openid ? item.openid.substring(0, 8) + '...' : 'NULL',
+            nick_name: item.nick_name
+          }));
+
           // 未配置 AppID 时跳过实际发送
           if (config.WECHAT_APPID === 'your_appid_here') {
             console.log(`[Scheduler] [DEV] 提醒: "${item.title}" -> ${item.nick_name} (offset=${item.remind_offset}s)`);
