@@ -19,11 +19,12 @@ function startScheduler() {
           t.title,
           t.due_time,
           t.status,
-          u.openid,
-          u.nick_name
+          COALESCE(a.openid, c.openid) AS openid,
+          COALESCE(a.nick_name, c.nick_name) AS nick_name
         FROM reminders r
         JOIN todos t ON r.todo_id = t.id
-        JOIN users u ON t.assignee_id = u.id
+        LEFT JOIN users a ON t.assignee_id = a.id
+        JOIN users c ON t.creator_id = c.id
         WHERE r.sent = 0
           AND t.status != 'completed'
       `).all();

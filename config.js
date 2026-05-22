@@ -5,7 +5,7 @@ module.exports = {
   WECHAT_TEMPLATE_ID: 's41MRdvJvx1hCDJEf8PaqpsCiq01R_d7GoEzQEGHEo8',
 
   // JWT 密钥（生产环境请更换）
-  JWT_SECRET: 'todo_app_jwt_secret_' + Date.now(),
+  JWT_SECRET: 'toolbox_jwt_2026_m7xk3p',
   JWT_EXPIRES_IN: '7d',
 
   // 服务配置
