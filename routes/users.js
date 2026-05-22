@@ -25,6 +25,17 @@ router.get('/', authMiddleware, (req, res) => {
   res.json({ code: 0, data: users });
 });
 
+// PUT /api/users/profile — 更新个人资料
+router.put('/profile', authMiddleware, (req, res) => {
+  const { nick_name, avatar_url } = req.body;
+  if (!nick_name || !nick_name.trim()) {
+    return res.status(400).json({ code: 400, msg: '昵称不能为空' });
+  }
+  db.prepare('UPDATE users SET nick_name = ?, avatar_url = ? WHERE id = ?')
+    .run(nick_name.trim(), avatar_url || '', req.user.id);
+  res.json({ code: 0, msg: '更新成功' });
+});
+
 // GET /api/users/me — 当前用户信息
 router.get('/me', authMiddleware, (req, res) => {
   const user = db.prepare(
