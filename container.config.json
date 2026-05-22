@@ -7,8 +7,8 @@
   },
   "cpu": 0.5,
   "mem": 1,
-  "minNum": 0,
-  "maxNum": 3,
+  "minNum": 1,
+  "maxNum": 1,
   "policyType": "cpu",
   "policyThreshold": 60,
   "vpc": {
